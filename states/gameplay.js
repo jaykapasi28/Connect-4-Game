@@ -63,36 +63,44 @@ export default class GameplayState extends Phaser.State {
     checkForWinner() {
         for (let i = 0; i <= 5; i++) {
             for (let j = 0; j <= 6; j++) {
-                if(this.arr[i][j].coin === "blue" && this.arr[i][j+1].coin === "blue" && this.arr[i][j+2].coin === "blue" && this.arr[i][j+3].coin === "blue" ) {
-                    alert("Blue Wins!")
+                if(this.arr[i][j].coin === "blue" && this.arr[i][j+1] && this.arr[i][j+1].coin === "blue" && this.arr[i][j+2] && this.arr[i][j+2].coin === "blue" && this.arr[i][j+3] && this.arr[i][j+3].coin === "blue" ) {
+                    console.log("Blue Wins!")
                 }
 
-                if(this.arr[i][j].coin === "red" && this.arr[i][j+1].coin === "red" && this.arr[i][j+2].coin === "red" && this.arr[i][j+3].coin === "red" ) {
-                    alert("red Wins!")
+                if(this.arr[i][j].coin === "red" && this.arr[i][j+1] && this.arr[i][j+1].coin === "red" && this.arr[i][j+2] && this.arr[i][j+2].coin === "red" && this.arr[i][j+3] && this.arr[i][j+3].coin === "red" ) {
+                    console.log("red Wins!")
                 }
 
-                if(this.arr[i][j].coin === "blue" && this.arr[i][j-1].coin === "blue" && this.arr[i][j-2].coin === "blue" && this.arr[i][j-3].coin === "blue" ) {
-                    alert("Blue Wins!")
+                if(this.arr[i][j].coin === "blue" && this.arr[i][j-1] && this.arr[i][j-1].coin === "blue" && this.arr[i][j-2] && this.arr[i][j-2].coin === "blue" && this.arr[i][j-3] && this.arr[i][j-3].coin === "blue" ) {
+                    console.log("Blue Wins!")
                 }
 
-                if(this.arr[i][j].coin === "red" && this.arr[i][j-1].coin === "red" && this.arr[i][j-2].coin === "red" && this.arr[i][j-3].coin === "red" ) {
-                    alert("red Wins!")
+                if(this.arr[i][j].coin === "red" && this.arr[i][j-1] && this.arr[i][j-1].coin === "red" && this.arr[i][j-2] && this.arr[i][j-2].coin === "red" && this.arr[i][j-3] && this.arr[i][j-3].coin === "red" ) {
+                    console.log("red Wins!")
                 }
 
-                if(this.arr[i][j].coin === "blue" && this.arr[i+1][j].coin === "blue" && this.arr[i+2][j].coin === "blue" && this.arr[i+3][j].coin === "blue" ) {
-                    alert("Blue Wins!")
+                if(this.arr[i][j].coin === "blue" && this.arr[i+1] && this.arr[i+1][j].coin === "blue" && this.arr[i+2] && this.arr[i+2][j].coin === "blue" && this.arr[i+3] && this.arr[i+3][j].coin === "blue" ) {
+                    console.log("Blue Wins!")
                 }
 
-                if(this.arr[i][j].coin === "red" && this.arr[i+1][j].coin === "red" && this.arr[i+2][j].coin === "red" && this.arr[i+3][j].coin === "red" ) {
-                    alert("red Wins!")
+                if(this.arr[i][j].coin === "red" && this.arr[i+1] && this.arr[i+1][j].coin === "red" && this.arr[i+2] && this.arr[i+2][j].coin === "red" && this.arr[i+3   ] && this.arr[i+3][j].coin === "red" ) {
+                    console.log("red Wins!")
                 }
 
-                if(this.arr[i][j].coin === "blue" && this.arr[i-1][j].coin === "blue" && this.arr[i-2][j].coin === "blue" && this.arr[i-3][j].coin === "blue" ) {
-                    alert("Blue Wins!")
+                if(this.arr[i][j].coin === "blue" && this.arr[i+1][j+1] && this.arr[i+1][j+1].coin === "blue" && this.arr[i+2][j+2] && this.arr[i+3][j+3] && this.arr[i+3][j+3].coin === "blue") {
+                    console.log("Blue Wins!");
                 }
 
-                if(this.arr[i][j].coin === "red" && this.arr[i-1][j].coin === "red" && this.arr[i-2][j].coin === "red" && this.arr[i-3][j].coin === "red" ) {
-                    alert("red Wins!")
+                if(this.arr[i][j].coin === "red" && this.arr[i+1][j+1] && this.arr[i+1][j+1].coin === "red" && this.arr[i+2][j+2] && this.arr[i+3][j+3] && this.arr[i+3][j+3].coin === "red") {
+                    console.log("red Wins!");
+                }
+
+                if(this.arr[i][j].coin === "blue" && this.arr[i+1][j-1] && this.arr[i+1][j-1].coin === "blue" && this.arr[i+2][j-2] && this.arr[i+3][j-3] && this.arr[i+3][j-3].coin === "blue") {
+                    console.log("Blue Wins!");
+                }
+
+                if(this.arr[i][j].coin === "red" && this.arr[i+1][j-1] && this.arr[i+1][j-1].coin === "red" && this.arr[i+2][j-2] && this.arr[i+3][j-3] && this.arr[i+3][j-3].coin === "red") {
+                    console.log("red Wins!");
                 }
             }
         }
