@@ -24,7 +24,6 @@ export default class GameplayState extends Phaser.State {
                 this.arr[i].push({ row: i, column: j, coin: null });
             }
         }
-        console.log(this.arr);
 
         for(let i=0; i<7; i++) {
             var graphics = game.add.graphics(0, 0);
@@ -45,12 +44,19 @@ export default class GameplayState extends Phaser.State {
                 if(this.isCoinBlue) {
                     this.arr[i][g.id].coin = "blue";
                     this.colorCoin = this.game.add.sprite(this.w + this.d + this.d1 * g.id, this.h + this.d + this.d1 * i, "blue-coin");
+                    this.game.add.tween(this.colorCoin).from({
+                        y: 0
+                    }, 500, Phaser.Easing.Linear.None, true, 0, 0, false);
+                    console.log(this.colorCoin);
                     this.colorCoin.anchor.setTo(0.5, 0.5);
                     this.isCoinBlue = false;
                     break;
                 } else if(!this.isCoinBlue) {
                     this.arr[i][g.id].coin = "red";
                     this.colorCoin = this.game.add.sprite(this.w + this.d + this.d1 * g.id, this.h + this.d + this.d1 * i, "red-coin");
+                    this.game.add.tween(this.colorCoin).from({
+                        y: 0,
+                    }, 500, Phaser.Easing.Linear.None, true, 0, 0, false);
                     this.colorCoin.anchor.setTo(0.5, 0.5);
                     this.isCoinBlue = true;
                     break;
@@ -87,19 +93,19 @@ export default class GameplayState extends Phaser.State {
                     console.log("red Wins!")
                 }
 
-                if(this.arr[i][j].coin === "blue" && this.arr[i+1][j+1] && this.arr[i+1][j+1].coin === "blue" && this.arr[i+2][j+2] && this.arr[i+3][j+3] && this.arr[i+3][j+3].coin === "blue") {
+                if(this.arr[i][j].coin === "blue" && this.arr[i+1] && this.arr[j+1] && this.arr[i+1][j+1].coin === "blue" && this.arr[i+2] && this.arr[j+2] && this.arr[i+2][j+2].coin === "blue" && this.arr[i+3] && this.arr[j+3] && this.arr[i+3][j+3].coin === "blue") {
                     console.log("Blue Wins!");
                 }
 
-                if(this.arr[i][j].coin === "red" && this.arr[i+1][j+1] && this.arr[i+1][j+1].coin === "red" && this.arr[i+2][j+2] && this.arr[i+3][j+3] && this.arr[i+3][j+3].coin === "red") {
+                if(this.arr[i][j].coin === "red" && this.arr[i+1] && this.arr[j+1] && this.arr[i+1][j+1].coin === "red" && this.arr[i+2] && this.arr[j+2] && this.arr[i+2][j+2].coin === "red" && this.arr[i+3] && this.arr[j+3] && this.arr[i+3][j+3].coin === "red") {
                     console.log("red Wins!");
                 }
 
-                if(this.arr[i][j].coin === "blue" && this.arr[i+1][j-1] && this.arr[i+1][j-1].coin === "blue" && this.arr[i+2][j-2] && this.arr[i+3][j-3] && this.arr[i+3][j-3].coin === "blue") {
+                if(this.arr[i][j].coin === "blue" && this.arr[i+1] && this.arr[j-1] && this.arr[i+1][j-1].coin === "blue" && this.arr[i+2] && this.arr[j-2] && this.arr[i+2][j-2].coin === "blue" && this.arr[i+3] && this.arr[j-3] && this.arr[i+3][j-3].coin === "blue") {
                     console.log("Blue Wins!");
                 }
 
-                if(this.arr[i][j].coin === "red" && this.arr[i+1][j-1] && this.arr[i+1][j-1].coin === "red" && this.arr[i+2][j-2] && this.arr[i+3][j-3] && this.arr[i+3][j-3].coin === "red") {
+                if(this.arr[i][j].coin === "red" && this.arr[i+1] && this.arr[j-1] && this.arr[i+1][j-1].coin === "red" && this.arr[i+2] && this.arr[j-2] && this.arr[i+2][j-2].coin === "red" && this.arr[i+3] && this.arr[j-3] && this.arr[i+3][j-3].coin === "red") {
                     console.log("red Wins!");
                 }
             }
